@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## CI/CD
 
 This app is using github CI/CD and application is deployed on google's firebase
-
+Application is deployed on https://travtor-travis.web.app/cars-search
 
 
 ## State Management (NgRX)
@@ -31,3 +31,5 @@ You can check the coverage % by locally running command: `ng test --code-coverag
 #### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
