@@ -1,0 +1,20 @@
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
+.button i.material-icons {
+  color: white;
+}
+
+.mat-form-field {
+  font-size: 12px;
+  background:white;
+  color: black;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}

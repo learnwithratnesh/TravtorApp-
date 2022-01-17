@@ -1,0 +1,30 @@
+<ul class="nav nav-tabs" *ngIf="!selectedCar">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" [ngClass]="{'active': url === '/cars-search' || url === '/'}"
+      [routerLink]="['/']"><i class="material-icons"> local_taxi </i>{{'nav.cars' | translate}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/flight-search']" [ngClass]="{'active': url === '/flight-search'}"><i
+        class="material-icons"> flight </i>{{'nav.flights' | translate}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/hotel-search']" [ngClass]="{'active': url === '/hotel-search'}"><i
+        class="material-icons"> hotel </i>{{'nav.hotels' | translate}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/cruise-search']" [ngClass]="{'active': url === '/cruise-search'}"><i
+        class="material-icons">directions_boat </i>{{'nav.cruises' | translate}}</a>
+  </li>
+</ul>
+
+<div *ngIf="selectedCar" class="car-search">
+  <div class="location-details">{{selectedCar.pickLocation}}</div>
+  <div class="date-details">
+    <span>{{selectedCar.pickDate | date:'MMM d'}}, {{selectedCar.pickTime}} - </span>
+    <span>{{selectedCar.dropDate | date:'MMM d'}}, {{selectedCar.dropTime}}</span>
+  </div>
+</div>
+<div *ngIf="getCarItineraries?.carMockItineraries?.CarItineraries?.length">
+  <p class="results-found">{{getCarItineraries?.carMockItineraries?.CarItineraries?.length}} {{'carsResults.carsFound' |
+    translate}}</p>
+</div>

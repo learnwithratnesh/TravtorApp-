@@ -1,0 +1,49 @@
+{
+    "nav": {
+        "cars": "Autos",
+        "flights": "Flüge",
+        "hotels": "Hotels",
+        "cruises": "Kreuzfahrten",
+        "home": "Heim",
+        "english": "English",
+        "spanish": "Spanish",
+        "german": "German"
+    },
+    "carSearch": {
+        "pickLocation": "TREFFPUNKT",
+        "pickDate": "ABHOLDATUM",
+        "dropDate": "ABGABEDATUM",
+        "pickTime": "ABHOLZEIT",
+        "dropTime": "ABFAHRTSZEIT",
+        "age": "ALTER DES FAHRERS",
+        "searchRentalCars": "Mietwagen suchen",
+        "pickLocationRequired": "Abholort ist erforderlich",
+        "pickDateRequired": "Abholtermin ist erforderlich",
+        "dropDateRequired": "Abgabetermin ist erforderlich",
+        "pickTimeRequired": "Abholzeit ist erforderlich",
+        "dropTimeRequired": "Bringzeit ist erforderlich",
+        "ageRequired": "Alter des Fahrers ist erforderlich",
+        "enterValidDate": "Bitte gültiges Datum eingeben. "
+    },
+    "carsResults": {
+        "unlimitedMileage": "Unbegrenzte Kilometer",
+        "freeCancellation": "Kostenfreie Stornierung",
+        "until": "noch bis",
+        "farePerDay": "Durchschnitt/Tag",
+        "total": "Gesamt",
+        "days": "Tage",
+        "carsFound": "Autos gefunden",
+        "sort": "Sort",
+        "filter": "Filter",
+        "sortPriceLowest": "Preis: am niedrigsten",
+        "sortPriceHighest": "Preis: am höchsten",
+        "sortRentalCompanyAtoZ": "Vermieter: A bis Z",
+        "sortRentalCompanyZtoA": "Vermieter: Z bis A",
+        "sortCarTypeAtoZ": "Autotyp: A bis Z",
+        "sortCarTypeZtoA": "Autotyp: Z bis A",
+        "apply": "Sich bewerben",
+        "cancel": "Abbrechen",
+        "close": "Nah dran",
+        "back": "Zurück"
+    }
+}

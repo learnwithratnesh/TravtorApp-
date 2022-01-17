@@ -1,0 +1,48 @@
+<mat-card>
+    <h1 mat-dialog-title>{{'carsResults.sort' | translate}}</h1>
+    <div mat-dialog-content class="modal-body">
+        <form novalidate [formGroup]="sortForm">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sortByProp" id="price1" value="price-asc"
+                    formControlName="sortByProp" attr.aria-label="{{'carsResults.sortPriceLowest' | translate}}">
+                <label class="form-check-label" for="price1">{{'carsResults.sortPriceLowest' | translate}}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sortByProp" id="price2" value="price-dsc"
+                    formControlName="sortByProp" attr.aria-label="{{'carSearch.pickUpDate' | translate}}">
+                <label class="form-check-label" for="price2">{{'carsResults.sortPriceHighest' | translate}}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sortByProp" id="company1" value="company-asc"
+                    formControlName="sortByProp" attr.aria-label="{{'carsResults.sortRentalCompanyAtoZ' | translate}}">
+                <label class="form-check-label" for="company1">{{'carsResults.sortRentalCompanyAtoZ' |
+                    translate}}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sortByProp" id="company2" value="company-dsc"
+                    formControlName="sortByProp" attr.aria-label="{{'carsResults.sortRentalCompanyZtoA' | translate}}">
+                <label class="form-check-label" for="company2">{{'carsResults.sortRentalCompanyZtoA' |
+                    translate}}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sortByProp" id="type1" value="type-asc"
+                    formControlName="sortByProp" attr.aria-label="{{'carsResults.sortCarTypeAtoZ' | translate}}">
+                <label class="form-check-label" for="type1">{{'carsResults.sortCarTypeAtoZ' | translate}}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sortByProp" id="type2" value="type-dsc"
+                    formControlName="sortByProp" attr.aria-label="{{'carsResults.sortCarTypeZtoA' | translate}}">
+                <label class="form-check-label" for="type2">{{'carsResults.sortCarTypeZtoA' | translate}}</label>
+            </div>
+        </form>
+    </div>
+
+
+    <mat-dialog-actions class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="close()"
+            attr.aria-label="{{'carsResults.cancel' | translate}}">{{'carsResults.cancel' | translate}}</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!sortByProp.value"
+            (click)="save()" attr.aria-label="{{'carsResults.apply' | translate}}">{{'carsResults.apply' |
+            translate}}</button>
+    </mat-dialog-actions>
+</mat-card>

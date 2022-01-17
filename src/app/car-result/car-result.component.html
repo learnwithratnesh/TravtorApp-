@@ -1,0 +1,45 @@
+<div class="container"
+    *ngFor="let car of getCarItineraries?.carMockItineraries?.CarItineraries | orderBy : ObjPropName: OrderByType; let i = index;">
+    <mat-card class="shadow-lg p-4 mb-4 bg-white">
+        <div class="row">
+            <div class="col-3 car-image">
+                <img src={{car.vehicle.image}} class="cars-image">
+            </div>
+            <div class="col-9 vehicle-section">
+                <h2>{{car.vehicle.type}}</h2>
+                <p>{{car.vehicle.name}}</p>
+                <p>
+                    <span class="car-info">
+                        <i class="material-icons">people</i>
+                        <span class="specifications-info">{{car.vehicle.specifications.passengerCapacity}}</span>
+                    </span>
+                    <span class="car-info">
+                        <i class="material-icons">shopping_bag</i>
+                        <span class="specifications-info">{{car.vehicle.specifications.baggageCapacity}}</span>
+                    </span>
+                    <span class="car-info">
+                        <i class="material-icons">speed</i>
+                        <span *ngIf="car.unlimitedMileage"
+                            class="specifications-info specifications-info-mileage">{{'carsResults.unlimitedMileage' |
+                            translate}}</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div>
+            <p><span class="highlight">{{'carsResults.freeCancellation' | translate}}</span> {{'carsResults.until' |
+                translate}} {{car.cancellationDetails.freeCancellationEndDate | date: 'EEE, MMM d, y'}}</p>
+        </div>
+        <hr>
+        <div>
+            <p><span class="highlight">{{car.fare.perDay | currency:'USD':'symbol'}}</span> {{'carsResults.avgPerDay' |
+                translate}}</p>
+            <p><span>{{'carsResults.total' | translate}} ({{totalDays}} {{'carsResults.days' | translate}}):
+                    {{car.fare.totalAmount | currency:'USD':'symbol'}}</span></p>
+        </div>
+    </mat-card>
+</div>
+<div class="sort-container">
+    <button type="button" class="sort-filter" (click)="openSort()">{{'carsResults.sort' |
+        translate}}</button>
+    <button type="button" class="sort-filter">{{'carsResults.filter' | translate}}</button>

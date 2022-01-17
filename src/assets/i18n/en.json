@@ -1,0 +1,49 @@
+{
+    "nav": {
+        "cars": "Cars",
+        "flights": "Flights",
+        "hotels": "Hotels",
+        "cruises": "Cruises",
+        "home": "Home",
+        "english": "English",
+        "spanish": "Spanish",
+        "german": "German"
+    },
+    "carSearch": {
+        "pickLocation": "Pick up location",
+        "pickDate": "START DATE",
+        "dropDate": "END DATE",
+        "pickTime": "START TIME",
+        "dropTime": "END TIME",
+        "age": "AGE OF DRIVER",
+        "searchRentalCars": "Show Rental Cars",
+        "pickLocationRequired": "Pick up location is required",
+        "pickDateRequired": "Start date is required",
+        "dropDateRequired": "End date is required",
+        "pickTimeRequired": "START time is required",
+        "dropTimeRequired": "END time is required",
+        "ageRequired": "Age of driver is required",
+        "enterValidDate": "Please enter valid date. "
+    },
+    "carsResults": {
+        "unlimitedMileage": "Unlimited Mileage",
+        "freeCancellation": "Free Cancellation",
+        "until": "until",
+        "avgPerDay": "avg/day",
+        "total": "Total",
+        "days": "days",
+        "carsFound": "cars found",
+        "sort": "Sort",
+        "filter": "Filter",
+        "sortPriceLowest": "Price: lowest",
+        "sortPriceHighest": "Price: highest",
+        "sortRentalCompanyAtoZ": "Rental Company: A to Z",
+        "sortRentalCompanyZtoA": "Rental Company: Z to A",
+        "sortCarTypeAtoZ": "Car Type: A to Z",
+        "sortCarTypeZtoA": "Car Type: Z to A",
+        "apply": "Apply",
+        "cancel": "Cancel",
+        "close": "Close",
+        "back": "Back"
+    }
+}

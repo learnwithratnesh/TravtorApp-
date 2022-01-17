@@ -1,0 +1,83 @@
+<div class="car-search container">
+    <mat-card class="mt-5">
+        <form novalidate [formGroup]="carForm">
+            <div class="mb-3 row">
+                <mat-form-field appearance="legacy">
+                    <mat-label>{{'carSearch.pickLocation' |
+                        translate}}</mat-label>
+                    <input formControlName="pickLocation" id="pickLocation" matInput required
+                        attr.aria-label="{{'carSearch.pickLocation' | translate}}"
+                        placeholder="{{'carSearch.pickLocation' | translate}}">
+                    <mat-error
+                        *ngIf="pickLocation.hasError('required') && (pickLocation.dirty || pickLocation.touched)">
+                        {{'carSearch.pickLocationRequired' | translate}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-6 col-sm-6">
+                    <mat-form-field>
+                        <mat-label>{{'carSearch.pickDate' | translate}}</mat-label>
+                        <input matInput formControlName="pickDate" id="pickDate" [min]="minDate" required
+                            attr.aria-label="{{'carSearch.pickDate' | translate}}" [matDatepicker]="pickerfrom">
+                        <mat-datepicker-toggle matSuffix [for]="pickerfrom"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerfrom></mat-datepicker>
+                        <mat-error *ngIf="pickDate.hasError('required') && (pickDate.dirty || pickDate.touched)">
+                            {{'carSearch.pickDateRequired' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-6 col-sm-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{'carSearch.dropDate' | translate}}</mat-label>
+                        <input matInput [matDatepicker]="pickerto" [min]="minDate" formControlName="dropDate" required
+                            attr.aria-label="{{'carSearch.dropDate' | translate}}" id="dropDate">
+                        <mat-datepicker-toggle matSuffix [for]="pickerto"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerto></mat-datepicker>
+                        <mat-error *ngIf="dropDate.hasError('required') && (dropDate.dirty || dropDate.touched)">
+                            {{'carSearch.dropDateRequired' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-6 col-sm-6">
+                    <label for="pickTime" class="col-form-label">{{'carSearch.pickTime' | translate}}</label>
+                    <input type="time" class="form-control" attr.aria-label="{{'carSearch.pickTime' | translate}}"
+                        formControlName="pickTime" id="pickTime"
+                        [ngClass]="{'is-invalid': pickTime.errors && pickTime.errors['required'] && (pickTime.dirty || pickTime.touched)}">
+                    <div class="invalid-feedback" *ngIf="pickTime.errors && (pickTime.dirty || pickTime.touched)">
+                        <p *ngIf="pickTime.errors['required']">{{'carSearch.pickTimeRequired' | translate}}</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6">
+                    <label for="dropTime" class="col-form-label">{{'carSearch.dropTime' | translate}}</label>
+                    <input type="time" class="form-control" attr.aria-label="{{'carSearch.dropTime' | translate}}"
+                        formControlName="dropTime" id="dropTime"
+                        [ngClass]="{'is-invalid': dropTime.errors && dropTime.errors['required'] && (dropTime.dirty || dropTime.touched)}">
+                    <div class="invalid-feedback" *ngIf="dropTime.errors && (dropTime.dirty || dropTime.touched)">
+                        <p *ngIf="dropTime.errors['required']">{{'carSearch.dropTimeRequired' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <mat-form-field>
+                    <mat-label>{{'carSearch.age' |
+                        translate}}</mat-label>
+                    <mat-select attr.aria-label="{{'carSearch.age' | translate}}" formControlName="age" id="age">
+                        <mat-option value="1-24">1-24</mat-option>
+                        <mat-option value="25+">25+</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="age.hasError('required') && (age.dirty || age.touched)">
+                        {{'carSearch.ageRequired' | translate}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-secondary" type="button"
+                    attr.aria-label="{{'carSearch.searchRentalCars' | translate}}" [disabled]="!carForm.valid"
+                    (click)="getCarsResults()">{{'carSearch.searchRentalCars' |
+                    translate}}</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
