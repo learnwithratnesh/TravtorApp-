@@ -106,7 +106,7 @@ describe('CarsSearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("getCarsResults should call carsService and return list of car teneraries and then redirect", waitForAsync(() => {
+  it("getCarsResults should call", waitForAsync(() => {
     spyOn(carsService, 'fetchData').and.returnValue(of(data));
     spyOn(store, 'dispatch');
     spyOn(router, 'navigate');
