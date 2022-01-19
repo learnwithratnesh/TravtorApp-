@@ -2,8 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
-
-import { RouterServiceService } from '../services/router-service.service';
 import { of } from 'rxjs';
 
 import { NavBarComponent } from './nav-bar.component';
@@ -11,7 +9,6 @@ import { NavBarComponent } from './nav-bar.component';
 describe('NavBarComponent', () => {
   let component: NavBarComponent;
   let fixture: ComponentFixture<NavBarComponent>;
-  let routerEventService: RouterServiceService
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -26,10 +23,9 @@ describe('NavBarComponent', () => {
         })
       ],
       declarations: [NavBarComponent],
-      providers: [RouterServiceService]
+      providers: []
     })
       .compileComponents();
-    routerEventService = TestBed.inject(RouterServiceService);
   });
 
   beforeEach(() => {
@@ -40,13 +36,5 @@ describe('NavBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-
-  it('ngOnInit should check the route events', () => {
-    spyOn(routerEventService, 'subscribeToRouterEvent').and.returnValue(of({ url: 'some url' }));
-    component.ngOnInit();
-    fixture.detectChanges();
-    expect(component.url).toEqual('some url');
   });
 });
