@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 
 import { Store, StoreModule } from '@ngrx/store';
 import { appReducer } from '../store/reducer';
-import { of } from 'rxjs/internal/observable/of';
 import { OrderByPipe } from '../pipes/order-by.pipe';
 
 describe('CarResultComponent', () => {

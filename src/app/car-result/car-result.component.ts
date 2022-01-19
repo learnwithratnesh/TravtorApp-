@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getCar, getCarItinerariesData } from '../store/store-selector';
-import { Router } from '@angular/router';
-import { DataServiceService } from '../services/data-service.service';
 import { propertyMap, orderMap, getKeyValue } from '../models/constants';
 
 import { MatDialog } from "@angular/material/dialog";
@@ -22,7 +20,7 @@ export class CarResultComponent {
   getCarItineraries: any;
   totalDays: number = 23;
 
-  constructor(private store: Store, private router: Router, private carsService: DataServiceService, private dialog: MatDialog) {
+  constructor(private store: Store, private dialog: MatDialog) {
     this.store.pipe(select(getCar)).subscribe((getCarSearch) => {
       this.selectedCar = getCarSearch;
     });
