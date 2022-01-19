@@ -23,8 +23,6 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.selectedCar);
-    console.log(this.getCarItineraries);
     this.routerEventService.subscribeToRouterEvent().subscribe((event) => {
       if (event.url) {
         this.url = event.url;
